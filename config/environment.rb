@@ -12,7 +12,7 @@ require 'radius'
 Radiant::Initializer.run do |config|
   # Skip frameworks you're not going to use (only works if using vendor/rails).
   # To use Rails without a database, you must remove the Active Record framework
-  config.frameworks -= [ :action_mailer ]
+  config.frameworks -= [ ]
 
   # Only load the extensions named here, in the order given. By default all
   # extensions in vendor/extensions are loaded, in alphabetical order. :all
@@ -83,3 +83,15 @@ Radiant::Initializer.run do |config|
     end
   end
 end
+
+ActionMailer::Base.delivery_method = :smtp
+ActionMailer::Base.smtp_settings = {
+  :enable_starttls_auto => true,
+  :address => "smtp.gmail.com",
+  :port => '587',
+  :domain => "cacvibe.com",
+  :authentication => :plain,
+  :user_name => "cacvibe@gmail.com",
+  :password => "pavement44"
+}
+Radiant::Config['mailer.post_to_page?'] = true

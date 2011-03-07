@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+  <head>
+    <title>Services</title>
+    <link href="/rss/" rel="alternate" title="RSS" type="application/rss+xml" />
+    <link rel="stylesheet" type="text/css" href="/styles.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/960.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/reset.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/text.css" />
+    <link REL="SHORTCUT ICON" HREF="/images/favicon.png">
+    <script src="/javascripts/jquery-1.4.1.min.js" type="text/javascript"></script>
+    <script src="/javascripts/jquery.easyslides.source.v1.1.js" type="text/javascript"></script>
+    <script>
+
+// Set up our options for the slideshow...
+var myOptions = {
+    noImages: 6, // Number of images
+    path: "/images/slideshow_images/",
+    captions: { // HTML can be included in the captions.
+        1: 'Caption 1',
+        2: 'Caption 2',
+        3: 'Caption 3',
+        4: 'Caption 4',
+        5: 'Caption 5',
+        6: 'Caption 6'
+    },
+    links: { // Should the images link anywhere? if no links are required at all then this option can be omitted.
+        1:"",
+        2:"",
+        3:"",
+        4:"",
+        5:"",
+        6:""
+    },
+    linksOpen:'newWindow', // How to open links? sameWindow or newWindow.
+    timerInterval: 5000, // 6500 = 6.5 seconds
+    randomise: false // Start with random image? true=yes/false=no
+};
+
+// Initiate the Easy Slides plugin, assigning it to your container DIV...
+$('#slideshow_container').easySlides(myOptions);
+
+</script>
+    <!--[if IE 6]>
+      <style type="text/css" media="screen">
+        @import url("/stylesheets/ie6.css");
+      </style>
+    <![endif]-->
+
+    <!--[if IE 7]>
+      <style type="text/css" media="screen">
+        @import url("/stylesheets/ie7.css");
+      </style>
+    <![endif]-->
+
+  </head>
+  <body>
+  <div class="container_24">
+    <div id="page">
+      <div id="greenline"></div>
+<div id="header">
+<ul style="padding-top: 5px;">
+<li>
+  <a class="cac-decision-link" href="/cac-decision-point">DECISION POINT F.A.Q.</a>
+</li>
+<li>
+  <a href="http://pmcm.net/login.php">CLIENT LOGIN</a>
+</li>
+</ul>
+</div>
+
+      <div class="clear"></div>
+      <div id="nav">
+        <a href="/" style="border: 0;"><img src="/images/cac-logo.jpg" style="margin-top: 17px; float: left; margin-right: 15px;" /></a>
+<ul>
+  <li><a href="/">HOME</a></li>
+  <li class="selected"><a href="/services">SERVICES</a></li> <li><a href="/careers">CAREERS</a></li> <li><a href="/news">NEWS</a></li> <li><a href="/contact">CONTACT</a></li> <li><a href="/links">LINKS</a></li>
+</ul>    
+      </div>
+      <div id="main">
+         <div class="slider">
+<div id="slideshow_container" class="easy_slides_container"></div>
+</div>
+      
+        <div class="clear" style="border-top: 4px solid #55a351; visibility: visible; width: 943px; height: 10px; margin: 10px 0;"></div>
+       <div id="sidebar-wrapper">
+          <div id="sidebar">
+            <h2>The Benefits of Our Services</h2>
+<p><b>Non-Opening of Machinery:</b><br />
+Our vibration services meet Class approved Condition Monitoring (CM) to secure credits for non-opening of machinery. The cost of the &quot;open and inspect&quot; requirement is virtually eliminated resulting in cost saving with an estimated ROI of 10 to 1.<br />
+<b><br />
+Class Approved PM Program:</b><br />
+CAC can provide an annual vibration analysis survey where required for an approved Planned Maintenance program.<br />
+<b><br />
+Annual Audit:</b><br />
+An annual audit gives the Port Engineer a virtual view of overall machine condition to aid in the planning of the annual maintenance budget</p>
+          </div>
+        </div>
+        <div id="content-wrapper">
+          <div id="content">
+            <h3 style="text-align: center;">A Leader in Maritime Vibration Analysis Condition Monitoring<br />
+Web Based Vibration Monitoring</h3>
+<p style="text-align: center;"><b>Condition Analyzing Corporation <br />
+provides our clients with the following services:</b></p>
+<p>Condition Monitoring (CM) is a collection of non-invasive data gathering and analysis techniques that greatly reduce the likelihood of unplanned equipment failures while also reducing the need for expensive planned maintenance (PM) programs...</p>
+<p><a href="#">more</a><br />
+<br />
+Vibration Analysis is an economical and effective means of reducing maintenance procedures. Causes of machinery failure exhibit unique characteristics and, as internal material conditions deteriorate, the characteristics become more pronounced...</p>
+<p><a href="#">more</a></p>
+<p><br />
+Thermography (Infra Red) Survey serves as a non-destructive tool in the analysis and evaluation of electrical distribution equipment critical to the operation of the plant.&nbsp; Thermographic surveys are also useful in the detection of boiler lagging deficiencies, faulty bearings, steam trap effectiveness and motor insulation. Thermography is a widely used tool in all facets of industry to measure anywhere a fault can be predicted by a temperature differential</p>
+<p><a href="#">more</a></p>
+<p><br />
+Both Mode Shape and Operation Deflection Shape (ODS) display the vibration on a drawing or picture of a machine. Mode shape (based on the inherent resonance of a structure) can be determined if a hammer or bump test can produce those frequencies on the machine when not in use. ODS (based on the source frequencies and the resonance frequencies) can be determined from roving and reference measurements on the machine while in actual use</p>
+<p><a href="#">more</a></p>
+            
+          </div>
+        </div>
+      </div>
+    <div style="clear:both"></div>
+    <div id="footer-wrapper">
+        <div id="footer">
+          Copyright 2011 Condition Analyzing Corporation. All rights reserved
+        </div>
+    </div>
+    </div>
+    <div id="footer-bottom"></div>
+  </div>
+  </body>
+<script>
+
+// Set up our options for the slideshow...
+var myOptions = {
+    noImages: 6, // Number of images
+    path: "/images/slideshow_images/",
+    captions: { // HTML can be included in the captions.
+        1: 'Caption 1',
+        2: 'Caption 2',
+        3: 'Caption 3',
+        4: 'Caption 4',
+        5: 'Caption 5',
+        6: 'Caption 6'
+    },
+    links: { // Should the images link anywhere? if no links are required at all then this option can be omitted.
+        1:"",
+        2:"",
+        3:"",
+        4:"",
+        5:"",
+        6:""
+    },
+    linksOpen:'newWindow', // How to open links? sameWindow or newWindow.
+    timerInterval: 5000, // 6500 = 6.5 seconds
+    randomise: false // Start with random image? true=yes/false=no
+};
+
+// Initiate the Easy Slides plugin, assigning it to your container DIV...
+$('#slideshow_container').easySlides(myOptions);
+
+</script> 
+</html>

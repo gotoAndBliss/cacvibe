@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+  <head>
+    <title>Careers</title>
+    <link href="/rss/" rel="alternate" title="RSS" type="application/rss+xml" />
+    <link rel="stylesheet" type="text/css" href="/styles.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/960.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/reset.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/text.css" />
+    <script src="/javascripts/jquery-1.4.1.min.js" type="text/javascript"></script>
+    <script src="/javascripts/jquery.easyslides.source.v1.1.js" type="text/javascript"></script>
+    <link REL="SHORTCUT ICON" HREF="/images/favicon.png">
+    <script type="text/javascript" src="http://www.jeroenwijering.com/embed/swfobject.js"></script>
+
+    <!--[if IE 6]>
+      <style type="text/css" media="screen">
+        @import url("/stylesheets/ie6.css");
+      </style>
+    <![endif]-->
+
+    <!--[if IE 7]>
+      <style type="text/css" media="screen">
+        @import url("/stylesheets/ie7.css");
+      </style>
+    <![endif]-->
+
+  </head>
+  <body>
+  <div class="container_24">
+    <div id="page">
+      <div id="greenline"></div>
+<div id="header">
+<ul style="padding-top: 5px;">
+<li>
+  <a class="cac-decision-link" href="/cac-decision-point">DECISION POINT F.A.Q.</a>
+</li>
+<li>
+  <a href="http://pmcm.net/login.php">CLIENT LOGIN</a>
+</li>
+</ul>
+</div>
+
+      <div class="clear"></div>
+      <div id="nav">
+        <a href="/" style="border: 0;"><img src="/images/cac-logo.jpg" style="margin-top: 17px; float: left; margin-right: 15px;" /></a>
+<ul>
+  <li><a href="/">HOME</a></li>
+  <li><a href="/services">SERVICES</a></li> <li class="selected"><a href="/careers">CAREERS</a></li> <li><a href="/news">NEWS</a></li> <li><a href="/contact">CONTACT</a></li> <li><a href="/links">LINKS</a></li>
+</ul>    
+      </div>
+      <div id="main">
+        <div class="slider">
+<div id="slideshow_container" class="easy_slides_container"></div>
+</div>
+      
+        <div class="clear" style="border-top: 4px solid #55a351; visibility: visible; width: 943px; height: 10px; margin: 10px 0;"></div>
+
+        <div id="content-wrapper" style="width: 910px !important;" >
+          <div id="content">
+            <h3 style="text-align: center;"><span>A Leader in Maritime Vibration Analysis Condition Monitoring</span></h3>
+<p align="justify"><br />
+Interested in a career at CAC? We   are always on the  lookout for motivated top quality people to provide services   to our  first class clients.&nbsp;</p>
+<p align="justify">Although CAC is headquartered in Eatontown NJ our  decentralized business model means we employ qualified personnel that  work from their home location in  			most any coastal region of US and beyond.</p>
+<p>Current job openings May 2008. <br />
+<br />
+<a target="_blank" href="http://cacvibe.com/CAC%20-%20National%20Account%20Manager%20-%20Maritime.pdf"> 			National Account Manager</a><br />
+<br />
+<a target="_blank" href="http://cacvibe.com/field_surveyor_engineer_I.pdf">Field Surveyor/Engineer Level I</a><br />
+<br />
+<a target="_blank" href="http://cacvibe.com/CAC%20-%20Service%20Technician%20-%20Maritime.pdf"> 			Survey Technician</a></p>
+<p align="justify">If you have experience in Vibration  Analysis, Thermography or have Marine Experience or are Ex-Navy and are a  motivated individual possessing exceptional skills in computers,  mathematics, mechanics, technical writing and like to travel or have a  degree or post graduate degree in engineering or related discipline,  please contact us at:</p>
+<p align="justify">&nbsp;</p>
+<p><a href="mailto:resume@cacvibe.com">resume@cacvibe.com</a></p>
+            
+            <div id="extended">
+              
+
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    <div style="clear:both"></div>
+    <div id="footer-wrapper">
+        <div id="footer">
+          Copyright 2011 Condition Analyzing Corporation. All rights reserved
+        </div>
+    </div>
+    </div>
+    <div id="footer-bottom"></div>
+  </div>
+  </body>
+<script>
+
+// Set up our options for the slideshow...
+var myOptions = {
+    noImages: 6, // Number of images
+    path: "/images/slideshow_images/",
+    captions: { // HTML can be included in the captions.
+        1: 'Caption 1',
+        2: 'Caption 2',
+        3: 'Caption 3',
+        4: 'Caption 4',
+        5: 'Caption 5',
+        6: 'Caption 6'
+    },
+    links: { // Should the images link anywhere? if no links are required at all then this option can be omitted.
+        1:"",
+        2:"",
+        3:"",
+        4:"",
+        5:"",
+        6:""
+    },
+    linksOpen:'newWindow', // How to open links? sameWindow or newWindow.
+    timerInterval: 5000, // 6500 = 6.5 seconds
+    randomise: false // Start with random image? true=yes/false=no
+};
+
+// Initiate the Easy Slides plugin, assigning it to your container DIV...
+$('#slideshow_container').easySlides(myOptions);
+
+</script> 
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+  <head>
+    <title>Conditional Analytics Corporation - Home Page</title>
+    <link href="/rss/" rel="alternate" title="RSS" type="application/rss+xml" />
+    <link rel="stylesheet" type="text/css" href="/styles.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/960.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/reset.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/text.css" />
+    <link REL="SHORTCUT ICON" HREF="/images/favicon.png">
+    <script src="/javascripts/jquery-1.4.1.min.js" type="text/javascript"></script>
+    <script src="/javascripts/jquery.easyslides.source.v1.1.js" type="text/javascript"></script>
+    <script>
+
+// Set up our options for the slideshow...
+var myOptions = {
+    noImages: 6, // Number of images
+    path: "/images/slideshow_images/",
+    captions: { // HTML can be included in the captions.
+        1: 'Caption 1',
+        2: 'Caption 2',
+        3: 'Caption 3',
+        4: 'Caption 4',
+        5: 'Caption 5',
+        6: 'Caption 6'
+    },
+    links: { // Should the images link anywhere? if no links are required at all then this option can be omitted.
+        1:"",
+        2:"",
+        3:"",
+        4:"",
+        5:"",
+        6:""
+    },
+    linksOpen:'newWindow', // How to open links? sameWindow or newWindow.
+    timerInterval: 5000, // 6500 = 6.5 seconds
+    randomise: false // Start with random image? true=yes/false=no
+};
+
+// Initiate the Easy Slides plugin, assigning it to your container DIV...
+$('#slideshow_container').easySlides(myOptions);
+
+</script>
+    <!--[if IE 6]>
+      <style type="text/css" media="screen">
+        @import url("/stylesheets/ie6.css");
+      </style>
+    <![endif]-->
+
+    <!--[if IE 7]>
+      <style type="text/css" media="screen">
+        @import url("/stylesheets/ie7.css");
+      </style>
+    <![endif]-->
+
+  </head>
+  <body>
+  <div class="container_24">
+    <div id="page">
+      <div id="greenline"></div>
+<div id="header">
+<ul style="padding-top: 5px;">
+<li>
+  <a class="cac-decision-link" href="/cac-decision-point">DECISION POINT F.A.Q.</a>
+</li>
+<li>
+  <a href="http://pmcm.net/login.php">CLIENT LOGIN</a>
+</li>
+</ul>
+</div>
+
+      <div class="clear"></div>
+      <div id="nav">
+        <a href="/" style="border: 0;"><img src="/images/cac-logo.jpg" style="margin-top: 17px; float: left; margin-right: 15px;" /></a>
+<ul>
+  <li class="selected"><a href="/">HOME</a></li>
+  <li><a href="/services">SERVICES</a></li> <li><a href="/careers">CAREERS</a></li> <li><a href="/news">NEWS</a></li> <li><a href="/contact">CONTACT</a></li> <li><a href="/links">LINKS</a></li>
+</ul>    
+      </div>
+      <div id="main">
+         <div class="slider">
+<div id="slideshow_container" class="easy_slides_container"></div>
+</div>
+      
+        <div class="clear" style="border-top: 4px solid #55a351; visibility: visible; width: 943px; height: 10px; margin: 10px 0;"></div>
+       <div id="sidebar-wrapper">
+          <div id="sidebar">
+            <h5>Sign up for our newsletter</h5>
+
+<form action="/newsletters/" id="newsletter" method="post"><input name="authenticity_token" type="hidden" value="k6accmAc2F+x7leepIYCXVPjrBfSQ0lTboitQaRLNXc=" />
+  <input class="email" name="subscriber[email]" onfocus="this.value=''" style="font-size: 14px;" type="text" value="Enter your email address..." />
+<input class="submit-btn" type="submit" value="Subscribe" />
+</form>
+
+<hr />
+
+<h2>Welcome</h2>
+
+<p>Condition Analyzing Corporation (CAC) is a service company established in 1969 to provide Condition Monitoring Programs including Vibration Analysis and Thermographic Inspections.</p>
+
+<p>Our clients are major United States shipping companies and the International Maritime community.</p>
+
+<p>Our services also extend to U.S. Government Agencies, Military and land-based industrial facilities.</p>
+
+<p>What has made us a pioneer in the early days of modern industrial condition monitoring makes us the industry leader today.</p>
+
+<p><a href="#">read more</a></p>
+
+          </div>
+        </div>
+        <div id="content-wrapper">
+          <div id="content">
+            <p style="text-align: left;"><b>A Leader in Maritime Vibration Analysis Condition Monitoring<br />
+Web Based Vibration Monitoring</b></p>
+<ul>
+    <li>-1969: Founded the Corporation</li>
+    <li>-1978: Established initial groundwork for ABS Special Survey program</li>
+    <li>-1984: Developed custom analytics engine and database</li>
+    <li>-2006: CACVIBE.NET online reporting the method of choice.</li>
+</ul>
+<p style="text-align: left;"><a href="#">more</a><br />
+<br />
+<b>Condition Analyzing Corporation provides our clients with the following services:</b></p>
+<ol>
+    <li>Web Based Vibration Condition Monitoring Programs</li>
+    <li>Vibration Analysis</li>
+    <li>Modal Shape and Operation Deflection Shape (ODS) Analysis</li>
+    <li>Thermographic (Infra Red) Survey</li>
+</ol>
+<ul>
+    <li>&nbsp;CAC VCM &ndash; Simple, Flexible, Effective</li>
+    <li>&nbsp;What is Vibration Condition Monitoring?</li>
+    <li>&nbsp;Why utilize Vibration Condition Monitoring?</li>
+    <li>&nbsp;Vibration Condition Monitoring vs. Regulatory Open &amp; Inspect</li>
+    <li>&nbsp;CA460 device&hellip; No Wires!</li>
+</ul>
+<p style="text-align: left;">Inclusive of the above services we also cover a worldwide presence along with a top flight staff of engineers and technicians to serve your purpose. Over the years we have developed wonderful online access to quickly allow you the customer to access critical information. This speeding up workflow and deliver the reports anywhere instantaneously via the internet using a standard web browser.</p>
+<p style="text-align: left;">&nbsp;</p>
+            
+          </div>
+        </div>
+      </div>
+    <div style="clear:both"></div>
+    <div id="footer-wrapper">
+        <div id="footer">
+          Copyright 2011 Condition Analyzing Corporation. All rights reserved
+        </div>
+    </div>
+    </div>
+    <div id="footer-bottom"></div>
+  </div>
+  </body>
+<script>
+
+// Set up our options for the slideshow...
+var myOptions = {
+    noImages: 6, // Number of images
+    path: "/images/slideshow_images/",
+    captions: { // HTML can be included in the captions.
+        1: 'Caption 1',
+        2: 'Caption 2',
+        3: 'Caption 3',
+        4: 'Caption 4',
+        5: 'Caption 5',
+        6: 'Caption 6'
+    },
+    links: { // Should the images link anywhere? if no links are required at all then this option can be omitted.
+        1:"",
+        2:"",
+        3:"",
+        4:"",
+        5:"",
+        6:""
+    },
+    linksOpen:'newWindow', // How to open links? sameWindow or newWindow.
+    timerInterval: 5000, // 6500 = 6.5 seconds
+    randomise: false // Start with random image? true=yes/false=no
+};
+
+// Initiate the Easy Slides plugin, assigning it to your container DIV...
+$('#slideshow_container').easySlides(myOptions);
+
+</script> 
+</html>

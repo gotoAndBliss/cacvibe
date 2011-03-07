@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+  <head>
+    <title>Articles</title>
+    <link href="/rss/" rel="alternate" title="RSS" type="application/rss+xml" />
+    <link rel="stylesheet" type="text/css" href="/styles.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/960.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/reset.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/text.css" />
+    <link REL="SHORTCUT ICON" HREF="/images/favicon.png">
+    <script src="/javascripts/jquery-1.4.1.min.js" type="text/javascript"></script>
+    <script src="/javascripts/jquery.easyslides.source.v1.1.js" type="text/javascript"></script>
+    <script>
+
+// Set up our options for the slideshow...
+var myOptions = {
+    noImages: 6, // Number of images
+    path: "/images/slideshow_images/",
+    captions: { // HTML can be included in the captions.
+        1: 'Caption 1',
+        2: 'Caption 2',
+        3: 'Caption 3',
+        4: 'Caption 4',
+        5: 'Caption 5',
+        6: 'Caption 6'
+    },
+    links: { // Should the images link anywhere? if no links are required at all then this option can be omitted.
+        1:"",
+        2:"",
+        3:"",
+        4:"",
+        5:"",
+        6:""
+    },
+    linksOpen:'newWindow', // How to open links? sameWindow or newWindow.
+    timerInterval: 5000, // 6500 = 6.5 seconds
+    randomise: false // Start with random image? true=yes/false=no
+};
+
+// Initiate the Easy Slides plugin, assigning it to your container DIV...
+$('#slideshow_container').easySlides(myOptions);
+
+</script>
+    <!--[if IE 6]>
+      <style type="text/css" media="screen">
+        @import url("/stylesheets/ie6.css");
+      </style>
+    <![endif]-->
+
+    <!--[if IE 7]>
+      <style type="text/css" media="screen">
+        @import url("/stylesheets/ie7.css");
+      </style>
+    <![endif]-->
+
+  </head>
+  <body>
+  <div class="container_24">
+    <div id="page">
+      <div id="greenline"></div>
+<div id="header">
+<ul style="padding-top: 5px;">
+<li>
+  <a class="cac-decision-link" href="/cac-decision-point">DECISION POINT F.A.Q.</a>
+</li>
+<li>
+  <a href="http://pmcm.net/login.php">CLIENT LOGIN</a>
+</li>
+</ul>
+</div>
+
+      <div class="clear"></div>
+      <div id="nav">
+        <a href="/" style="border: 0;"><img src="/images/cac-logo.jpg" style="margin-top: 17px; float: left; margin-right: 15px;" /></a>
+<ul>
+  <li><a href="/">HOME</a></li>
+  <li><a href="/services">SERVICES</a></li> <li><a href="/careers">CAREERS</a></li> <li class="selected"><a href="/news">NEWS</a></li> <li><a href="/contact">CONTACT</a></li> <li><a href="/links">LINKS</a></li>
+</ul>    
+      </div>
+      <div id="main">
+         <div class="slider">
+<div id="slideshow_container" class="easy_slides_container"></div>
+</div>
+      
+        <div class="clear" style="border-top: 4px solid #55a351; visibility: visible; width: 943px; height: 10px; margin: 10px 0;"></div>
+       <div id="sidebar-wrapper">
+          <div id="sidebar">
+            <div class="box">
+<h3>News Archives</h3>
+<ul>
+
+
+<li><a href="/news/2011/03/">March 2011</a></li>
+
+<li><a href="/news/2008/12/">December 2008</a></li>
+
+<li><a href="/news/2006/06/">June 2006</a></li>
+
+
+</ul>
+</div>
+
+<h5>Sign up for our newsletter</h5>
+
+<form action="/newsletters/" method="post" id="newsletter"><input name="authenticity_token" type="hidden" value="k6accmAc2F+x7leepIYCXVPjrBfSQ0lTboitQaRLNXc=" />
+  <input class="email" value="Enter your email address..." type="text" onfocus="this.value=''" name="subscriber[email]" style="font-size: 14px;" />
+<input class="subscribe" type="submit" value="Subscribe" class="submit-btn" />
+</form>
+
+          </div>
+        </div>
+        <div id="content-wrapper">
+          <div id="content">
+            
+<div class="entry">
+  <h3><a href="/news/2011/03/07/new-cac-website-going-up/">New CAC Website Going Up!</a></h3>
+    <div class="posted">
+      Posted by gotoAndBliss on March 07, 2011<em>|</em><img src="http://spurrd.com/assets/123/comment.png" /><a href="/news/2011/03/07/new-cac-website-going-up/#disqus_thread">Comments</a><em>|</em><a href="/news/2011/03/07/new-cac-website-going-up/">Read full article</a>    
+    </div>
+  <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+</div>
+
+<div class="entry">
+  <h3><a href="/news/2008/12/23/the-finest-grind/">The Finest grind</a></h3>
+    <div class="posted">
+      Posted by gotoAndBliss on December 23, 2008<em>|</em><img src="http://spurrd.com/assets/123/comment.png" /><a href="/news/2008/12/23/the-finest-grind/#disqus_thread">Comments</a><em>|</em><a href="/news/2008/12/23/the-finest-grind/">Read full article</a>    
+    </div>
+  <p>Vivamus mollis porttitor odio. Vestibulum id mi. Suspendisse a tortor quis metus imperdiet eleifend. Pellentesque libero nulla, aliquam in, tristique vel, elementum et, odio. Fusce id ligula. Vivamus dapibus imperdiet ante. Aliquam id eros ut velit eleifend aliquet. Nulla commodo viverra orci. Sed auctor. Maecenas commodo. Mauris adipiscing lectus quis quam. Nulla a nisl in augue suscipit tincidunt. Nunc eros. Nam eget sapien eget lorem ultrices pulvinar. Vivamus dolor.</p>
+</div>
+
+<div class="entry">
+  <h3><a href="/news/2006/06/09/new-location-opening-tonight/">New location opening tonight</a></h3>
+    <div class="posted">
+      Posted by gotoAndBliss on June 09, 2006<em>|</em><img src="http://spurrd.com/assets/123/comment.png" /><a href="/news/2006/06/09/new-location-opening-tonight/#disqus_thread">Comments</a><em>|</em><a href="/news/2006/06/09/new-location-opening-tonight/">Read full article</a>    
+    </div>
+  <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.</p>
+</div>
+
+
+﻿﻿﻿﻿<script type="text/javascript">
+//<![CDATA[
+(function() {
+		var links = document.getElementsByTagName('a');
+		var query = '?';
+		for(var i = 0; i < links.length; i++) {
+			if(links[i].href.indexOf('#disqus_thread') >= 0) {
+				query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+			}
+		}
+		document.write('<script type="text/javascript" src="http://disqus.com/forums/radiant/get_num_replies.js' + query + '"></' + 'script>');
+	})();
+//]]>
+</script>
+
+
+            
+          </div>
+        </div>
+      </div>
+    <div style="clear:both"></div>
+    <div id="footer-wrapper">
+        <div id="footer">
+          Copyright 2011 Condition Analyzing Corporation. All rights reserved
+        </div>
+    </div>
+    </div>
+    <div id="footer-bottom"></div>
+  </div>
+  </body>
+<script>
+
+// Set up our options for the slideshow...
+var myOptions = {
+    noImages: 6, // Number of images
+    path: "/images/slideshow_images/",
+    captions: { // HTML can be included in the captions.
+        1: 'Caption 1',
+        2: 'Caption 2',
+        3: 'Caption 3',
+        4: 'Caption 4',
+        5: 'Caption 5',
+        6: 'Caption 6'
+    },
+    links: { // Should the images link anywhere? if no links are required at all then this option can be omitted.
+        1:"",
+        2:"",
+        3:"",
+        4:"",
+        5:"",
+        6:""
+    },
+    linksOpen:'newWindow', // How to open links? sameWindow or newWindow.
+    timerInterval: 5000, // 6500 = 6.5 seconds
+    randomise: false // Start with random image? true=yes/false=no
+};
+
+// Initiate the Easy Slides plugin, assigning it to your container DIV...
+$('#slideshow_container').easySlides(myOptions);
+
+</script> 
+</html>
