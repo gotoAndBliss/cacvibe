@@ -1,0 +1,1074 @@
+BEGIN TRANSACTION;
+CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL);
+INSERT INTO "schema_migrations" VALUES('1');
+INSERT INTO "schema_migrations" VALUES('2');
+INSERT INTO "schema_migrations" VALUES('3');
+INSERT INTO "schema_migrations" VALUES('4');
+INSERT INTO "schema_migrations" VALUES('5');
+INSERT INTO "schema_migrations" VALUES('6');
+INSERT INTO "schema_migrations" VALUES('7');
+INSERT INTO "schema_migrations" VALUES('8');
+INSERT INTO "schema_migrations" VALUES('9');
+INSERT INTO "schema_migrations" VALUES('10');
+INSERT INTO "schema_migrations" VALUES('11');
+INSERT INTO "schema_migrations" VALUES('12');
+INSERT INTO "schema_migrations" VALUES('13');
+INSERT INTO "schema_migrations" VALUES('14');
+INSERT INTO "schema_migrations" VALUES('15');
+INSERT INTO "schema_migrations" VALUES('16');
+INSERT INTO "schema_migrations" VALUES('17');
+INSERT INTO "schema_migrations" VALUES('18');
+INSERT INTO "schema_migrations" VALUES('19');
+INSERT INTO "schema_migrations" VALUES('20');
+INSERT INTO "schema_migrations" VALUES('21');
+INSERT INTO "schema_migrations" VALUES('20081203140407');
+INSERT INTO "schema_migrations" VALUES('20090226140109');
+INSERT INTO "schema_migrations" VALUES('20090929164633');
+INSERT INTO "schema_migrations" VALUES('20091003095744');
+INSERT INTO "schema_migrations" VALUES('Paperclipped-1');
+INSERT INTO "schema_migrations" VALUES('Paperclipped-2');
+INSERT INTO "schema_migrations" VALUES('Paperclipped-3');
+INSERT INTO "schema_migrations" VALUES('Paperclipped-4');
+INSERT INTO "schema_migrations" VALUES('Paperclipped-5');
+INSERT INTO "schema_migrations" VALUES('Settings-1');
+INSERT INTO "schema_migrations" VALUES('Settings-2');
+INSERT INTO "schema_migrations" VALUES('Paperclipped-6');
+INSERT INTO "schema_migrations" VALUES('Paperclipped-7');
+INSERT INTO "schema_migrations" VALUES('Paperclipped-20090316132151');
+INSERT INTO "schema_migrations" VALUES('Subscriber Lists-1');
+INSERT INTO "schema_migrations" VALUES('Newsletter-1');
+INSERT INTO "schema_migrations" VALUES('Newsletter-2');
+INSERT INTO "schema_migrations" VALUES('Newsletter-3');
+INSERT INTO "schema_migrations" VALUES('Newsletter-4');
+INSERT INTO "schema_migrations" VALUES('Newsletter-5');
+INSERT INTO "schema_migrations" VALUES('Newsletter-20110306153651');
+CREATE TABLE "config" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar(40) DEFAULT '' NOT NULL, "value" varchar(255) DEFAULT '', "description" text);
+INSERT INTO "config" VALUES(1,'admin.title','Radiant CMS','Title text displayed at the top of all administration screens.');
+INSERT INTO "config" VALUES(2,'admin.subtitle','Publishing for Small Teams','The tagline displayed underneath the main administration title');
+INSERT INTO "config" VALUES(3,'defaults.page.parts','body, extended','Defines the page parts that a new page is created with.  It should be a list, separated by a comma and a space.  For example:
+
+bq. @body, extended, sidebar@
+');
+INSERT INTO "config" VALUES(4,'defaults.page.status','draft','Defines the publishing status of new pages.  This can any one of:
+
+* draft
+* published
+* reviewed
+* hidden
+');
+INSERT INTO "config" VALUES(5,'defaults.page.filter','Markdown','Sets the text filter a new page has by default.  Valid options, in a vanilla Radiant install are:
+
+* _leave blank to set no default filter_
+* Markdown
+* SmartyPants
+* Textile
+');
+INSERT INTO "config" VALUES(6,'session_timeout','1209600',NULL);
+INSERT INTO "config" VALUES(7,'default_locale','en',NULL);
+INSERT INTO "config" VALUES(8,'roles.settings','admin','List of user roles that may see the settings tabs.');
+INSERT INTO "config" VALUES(9,'assets.additional_thumbnails','normal=640x640>','Defines the default sizes for image assets that are created when an image is uploaded. Use "#" to crop the image to a specific size. "42x42#" would be a square thumbnail, cropped in the center 42 pixels by 42 pixels.');
+INSERT INTO "config" VALUES(10,'assets.display_size','original','Sets which of your image sizes is shown is the edit view. Defaults to the "original" image size, but any size may be used. ');
+INSERT INTO "config" VALUES(11,'assets.content_types','image/jpeg, image/pjpeg, image/gif, image/png, image/x-png, image/jpg, video/x-m4v, video/quicktime, application/x-shockwave-flash, audio/mpeg, video/mpeg','Defines the content types of that will be allowed to be uploaded as assets.');
+INSERT INTO "config" VALUES(12,'assets.max_asset_size','5','The size in megabytes that will be the max size allowed to be uploaded for an asset');
+INSERT INTO "config" VALUES(13,'assets.skip_filetype_validation','true',NULL);
+INSERT INTO "config" VALUES(14,'mailer.post_to_page?','true',NULL);
+DELETE FROM sqlite_sequence;
+INSERT INTO "sqlite_sequence" VALUES('users',1);
+INSERT INTO "sqlite_sequence" VALUES('config',14);
+INSERT INTO "sqlite_sequence" VALUES('snippets',12);
+INSERT INTO "sqlite_sequence" VALUES('pages',22);
+INSERT INTO "sqlite_sequence" VALUES('layouts',4);
+INSERT INTO "sqlite_sequence" VALUES('page_parts',45);
+INSERT INTO "sqlite_sequence" VALUES('newsletters',12);
+CREATE TABLE "page_parts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(100), "filter_id" varchar(25), "content" text, "page_id" integer);
+INSERT INTO "page_parts" VALUES(1,'body','Fckeditor','<p style="text-align: left;"><b>A Leader in Maritime Vibration Analysis Condition Monitoring<br />
+Web Based Vibration Monitoring</b></p>
+<ul>
+    <li>-1969: Founded the Corporation</li>
+    <li>-1978: Established initial groundwork for ABS Special Survey program</li>
+    <li>-1984: Developed custom analytics engine and database</li>
+    <li>-2006: CACVIBE.NET online reporting the method of choice.</li>
+</ul>
+<p style="text-align: left;"><a href="#">more</a><br />
+<br />
+<b>Condition Analyzing Corporation provides our clients with the following services:</b></p>
+<ol>
+    <li>Web Based Vibration Condition Monitoring Programs</li>
+    <li>Vibration Analysis</li>
+    <li>Modal Shape and Operation Deflection Shape (ODS) Analysis</li>
+    <li>Thermographic (Infra Red) Survey</li>
+</ol>
+<ul>
+    <li>&nbsp;CAC VCM &ndash; Simple, Flexible, Effective</li>
+    <li>&nbsp;What is Vibration Condition Monitoring?</li>
+    <li>&nbsp;Why utilize Vibration Condition Monitoring?</li>
+    <li>&nbsp;Vibration Condition Monitoring vs. Regulatory Open &amp; Inspect</li>
+    <li>&nbsp;CA460 device&hellip; No Wires!</li>
+</ul>
+<p style="text-align: left;">Inclusive of the above services we also cover a worldwide presence along with a top flight staff of engineers and technicians to serve your purpose. Over the years we have developed wonderful online access to quickly allow you the customer to access critical information. This speeding up workflow and deliver the reports anywhere instantaneously via the internet using a standard web browser.</p>
+<p style="text-align: left;">&nbsp;</p>',1);
+INSERT INTO "page_parts" VALUES(2,'body','Textile','The file you were looking for could not be found.
+
+Attempted URL: @<r:attempted_url />@
+
+It is possible that you typed the URL incorrectly or that you clicked on a bad link.
+
+"<< Back to Home Page":/
+',2);
+INSERT INTO "page_parts" VALUES(4,'body','','<r:children:each limit="5" order="desc">
+<div class="entry">
+  <h3><r:link /></h3>
+    <div class="posted">
+      Posted by <r:author /> on <r:date format="%B %d, %Y" /><em>|</em><img src="http://spurrd.com/assets/123/comment.png" /><a href="<r:url />#disqus_thread">Comments</a><em>|</em><r:link>Read full article</r:link>    
+    </div>
+  <r:content part="summary" />
+</div>
+</r:children:each>
+
+<r:snippet name="comments_summary" />',4);
+INSERT INTO "page_parts" VALUES(5,'body','Textile','<h3><r:title /></h3>
+<r:snippet name="posted" />
+
+At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
+
+Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
+
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+
+<r:snippet name="comments" />
+',5);
+INSERT INTO "page_parts" VALUES(7,'body','','/*---------------------------------  Styles.css  ---*/ 
+
+body {
+  background-color: #adcfe2 !important;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 80%;
+  padding: 0;
+  margin: 0;
+  text-align: center; }
+
+#page {
+    background: url("/images/main-repeating-bg.jpg") repeat-y scroll 0 0 transparent;
+    clear: both;
+    padding: 5px;
+    text-align: left;
+    width: 1023px; }
+
+#header {
+  color: #FFFFFF;
+  font-family: Arial,Helvetica,Geneva,sans-serif;
+  font-size: 35px;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  line-height: 0.72em;
+  text-transform: uppercase; 
+  height: 38px;
+}
+
+#header ul li {
+  float: right;
+  margin-right: 15px;
+}
+
+#header ul li a {
+  font-size: 14px;
+  font-weight: bold;
+  color: #666666;
+}
+
+#header a.cac-decision-link { 
+    -moz-border-radius: 4px 4px 4px 4px;
+    background: none repeat scroll 0 0 #6189B0;
+    color: white;
+    display: block;
+    height: 10px;
+    padding: 0 4px 15px;
+}
+
+#main {
+    background-color: white;
+    float: left;
+    margin: 13px 0 30px 19px;
+    width: 980px; }
+
+h1 {
+  color: #FFFFFF;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 35px;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  line-height: 0.72em;
+  text-transform: uppercase; }
+
+h2 {
+  color: #451811;
+  font-family: Georgia, sans-serif;
+  font-size: 270%;
+  font-weight: normal;
+  margin: 0px; }
+
+h3 {
+  font-family: Helvetica, Arial, Verdana, sans-serif;
+  font-size: 195%;
+  margin: 0px;
+  font-weight: bold; }
+
+h3 a {
+  color: #451811;
+  text-decoration: none;
+  border-bottom: none;
+  margin: 0px; }
+
+h3 a:hover {
+  color: #902f1c;
+  border-bottom: none; }
+
+a {
+  color: #711e11;
+  text-decoration: none;
+  border-bottom: 1px solid #DBD6D1; }  
+
+a:hover {
+  color: #451811;
+  text-decoration: none;
+}
+
+p {
+  color: #232323;
+  font-family: Georgia, Times, "Times New Roman";
+  font-size: 1.3em;
+  line-height: 1.3em;
+  margin: 0px 0px 10px;
+  font-size: 14px; }
+
+ul {
+  padding: 0; }
+
+li {
+  padding: 0; }
+
+
+/*---MAIN COLUMN---*/  
+
+#content-wrapper {
+    float: left;
+    padding-left: 25px;
+    width: 610px;
+    background: url(''/images/measurement_bg.jpg'') no-repeat top center;    
+}
+
+#content {
+  padding: 0px 3px; }
+
+
+/*---SIDEBAR---*/  
+
+#sidebar-wrapper {
+  float: left;
+  width: 300px; }
+
+#sidebar {
+  padding: 15px;
+  padding-top: 0px; }
+
+#sidebar h3 {
+  color: #222222;
+  font-family: Helvetica, Arial, Verdana, sans-serif;
+  font-size: 17px;
+  font-weight: bold;
+  margin: 0px; }
+
+#sidebar p {
+  line-height: 1.4em; }
+
+
+/*---ARTICLE---*/ 
+
+.entry {
+  margin-bottom: 20px; }
+
+.entry .info {
+  margin-top: 1em;
+  font-size: 1em; }
+
+.entry p {
+  font-size: 1.1em; }
+
+.posted {
+  color: #918C7E;
+  font-family: "lucida grande",arial,helvetica,verdana,sans-serif;
+  font-size: 10px;
+  margin: -3px 0 5px;
+  padding: 0px; }
+
+.posted em {
+  color: #451811;
+  font-style: italic;
+  margin: 0px 6px;
+  font-weight: bold; }
+
+.posted img {
+  background: transparent none repeat scroll 0 0;
+  border: medium none;
+  margin: 0 4px -5px 2px;
+  text-decoration: none; }
+
+
+/*---STYLES---*/ 
+
+#extra {
+  margin-bottom: 10px; }
+
+#extra .box {
+  background-color: #e8f0f6;
+  border-color: #D5E9F6; }
+
+#extra p {
+  line-height: 1.2em;
+  margin: 0px 0px 5px 0px; }
+
+#extra em {
+  font-style: italic; }
+
+#extra span {
+  color: #d26511;
+  font-size: 120%; }
+
+#player, #gallery {
+  background: #FFFFFF;
+  float: left;
+  clear: both;
+  margin: 0px 15px 15px 0px;
+  padding: 3px;
+  border: 1px solid #a9cde5; }
+
+#gallery a, 
+#gallery a:hover, 
+#player a, 
+#player a:hover,
+#extra img a,
+#extra img a:hover {
+  border-bottom: none !important;
+  text-decoration: none !important; }
+
+#extra a img {
+  margin-bottom: -3px; }
+
+.spot {
+  margin-bottom: 20px;
+  clear: both; }
+
+.spot p {
+  font-family: Verdana, sans-serif;
+  font-size: 11px; 
+  color: #333333;
+  margin-top: 0px; }
+
+.spot img {
+  float: left;
+  padding: 0px 12px 10px 0px; }
+
+.box {
+  padding: 15px;
+  border: 1px solid #dbd6d1;
+  background-color: #efedeb;
+  margin-bottom: 20px; }
+
+.box h3 {
+  font-size: 18px;
+  margin-bottom: 2px; }
+
+.box input {
+  margin-top: 5px; }
+
+.box input.email {
+  font-size: 10px;
+  padding: 3px; 
+  color: #a29e96; 
+  width: 140px; }
+
+.box input.subscribe {
+  width: 70px;
+  margin-left: 5px;
+  color: #232323; }
+
+.box ul {
+  margin-left: 20px; }
+
+.hidden {
+  display: none; }
+
+.clear {
+  clear: both; }
+
+/*---SITEMAP---*/ 
+
+#sitemap ul {
+  list-style-type: disc;
+  margin: 5px 0px 10px 35px;
+  line-height: 2em; }
+
+#sitemap li a {
+  font-family: Helvetica, Arial, Verdana, sans-serif;
+  font-size: 180%;
+  font-weight: bold;
+  margin: 0px; 
+  color: #451811;
+  text-decoration: none;
+  border-bottom: none; }
+
+#sitemap li a:hover {
+  color: #902f1c;
+  border-bottom: none; }
+
+#sitemap ul.second {
+  font-size: 80%; }
+
+/*---FOOTER---*/ 
+
+#footer-wrapper {
+    background: url("/images/footer-bg.jpg") repeat-x scroll 0 0 transparent;
+    border-bottom: 5px solid white;
+    height: 36px;
+    margin-left: 3px;
+    text-align: center;
+    width: 1020px;
+}
+#footer-bottom {
+ background: url(''images/footer-bottom.jpg'') no-repeat;
+ height: 28px;
+ width: 1034px;
+}
+
+#footer {
+  color: #595452;
+  font-family: "Lucida Grande", Verdana, Helvetica, Arial, sans-serif;
+  font-size: 90%;
+  margin-bottom: 30px;
+  padding-top: 5px; }
+
+#greenline {
+    background: url("/images/page-top.jpg") repeat-x scroll 0 0 transparent;
+    display: block;
+    height: 10px;
+    margin-left: 3px;
+    width: 1021px;
+}
+
+/*---------------------------------  Navigation.css  ---*/ 
+
+#nav {
+    background: url("images/header-bg.jpg") repeat-x scroll 0 0 transparent;
+    height: 88px;
+    margin-left: 3px;
+    padding-left: 20px;
+}
+
+#nav ul {
+	display: block;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	width: auto; }
+
+#nav ul li {
+	display: block;
+	float: left;
+	margin: 0;
+	padding: 0; }
+
+#nav ul li a {
+    color: #666666;
+    display: block;
+    float: left;
+    font-family: "Lucida Sans","Lucida Grande",Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    height: 43px;
+    margin-top: 4px;
+    padding: 30px 16px 7px;
+    text-decoration: none;
+    border-left: 1px solid #ffffff;
+    border-right: 1px solid #ffffff;
+}
+
+#nav ul li a:hover {
+    background: none repeat scroll 0 0 #6189B0;
+    border-left: 1px solid #5A7289;
+    border-right: 1px solid #5A7289;
+    color: #FFFFFF;
+    height: 43px;
+}
+
+#nav ul li.selected a {
+    background: none repeat scroll 0 0 #6189B0;
+    border-left: 1px solid #5A7289;
+    border-right: 1px solid #5A7289;
+    color: #FFFFFF;
+    height: 43px;
+}
+
+.submit-btn {
+    background: url("images/submit-btn.jpg") no-repeat scroll 0 0 transparent;
+    border: 0 none;
+    color: white;
+    height: 23px;
+    margin-left: 80px;
+    margin-top: 5px;
+    width: 118px;
+}
+
+
+/*---------------------------------  Lightbox.css  ---*/ 
+
+#lightbox{	position: absolute;	left: 0; width: 100%; z-index: 100; text-align: center; line-height: 0;}
+#lightbox img{ width: auto; height: auto;}
+#lightbox a img{ border: none; }
+
+#outerImageContainer{ position: relative; background-color: #fff; width: 250px; height: 250px; margin: 0 auto; }
+#imageContainer{ padding: 10px; }
+
+#loading{ position: absolute; top: 40%; left: 0%; height: 25%; width: 100%; text-align: center; line-height: 0; }
+#hoverNav{ position: absolute; top: 0; left: 0; height: 100%; width: 100%; z-index: 10; border-bottom: none; }
+#imageContainer>#hoverNav{ left: 0;}
+#hoverNav a{ outline: none; border-bottom: none;}
+
+#prevLink, #nextLink{ width: 49%; height: 100%; background-image: url(data:image/gif;base64,AAAA); /* Trick IE into showing hover */ display: block; }
+#prevLink { left: 0; float: left;}
+#nextLink { right: 0; float: right;} 
+#prevLink:hover, #prevLink:visited:hover { background: url(http://spurrd.com/assets/192/prevlabel.gif) left 15% no-repeat; }
+#nextLink:hover, #nextLink:visited:hover { background: url(http://www.spurrd.com/assets/189/nextlabel.gif) right 15% no-repeat; }
+
+#imageDataContainer{ font: 10px Verdana, Helvetica, sans-serif; background-color: #fff; margin: 0 auto; line-height: 1.4em; overflow: auto; width: 100%	; }
+
+#imageData{	padding:0 10px; color: #666; }
+#imageData #imageDetails{ width: 70%; float: left; text-align: left; }	
+#imageData #caption{ font-weight: bold;	}
+#imageData #numberDisplay{ display: block; clear: left; padding-bottom: 1.0em;	}			
+#imageData #bottomNavClose{ width: 66px; float: right;  padding-bottom: 0.7em; outline: none;}	 	
+
+#overlay{ position: absolute; top: 0; left: 0; z-index: 90; width: 100%; height: 500px; background-color: #000; }
+
+
+#slideshow_container{
+    width: 942px;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+}
+
+.easy_slides_caption{
+    background-color: transparent;
+    background-image: url("/images/trans-bg.png");
+    bottom: 15px;
+    color: white;
+    font-family: Helvetica,Arial;
+    font-size: 16px;
+    height: 20px;
+    padding: 35px;
+    width: 871px;
+    display: none;
+    position: absolute;
+    z-index: 3;
+    
+}',7);
+INSERT INTO "page_parts" VALUES(8,'sidebar','Markdown','<r:snippet name="newsletter" />
+
+-----
+
+
+Welcome
+---------
+
+Condition Analyzing Corporation (CAC) is a service company established in 1969 to provide Condition Monitoring Programs including Vibration Analysis and Thermographic Inspections.
+
+Our clients are major United States shipping companies and the International Maritime community.
+
+Our services also extend to U.S. Government Agencies, Military and land-based industrial facilities.
+
+What has made us a pioneer in the early days of modern industrial condition monitoring makes us the industry leader today.
+
+[read more](#)
+',1);
+INSERT INTO "page_parts" VALUES(9,'body','Textile','<h3><r:title /></h3>
+<r:snippet name="posted" />
+
+Vivamus mollis porttitor odio. Vestibulum id mi. Suspendisse a tortor quis metus imperdiet eleifend. Pellentesque libero nulla, aliquam in, tristique vel, elementum et, odio. Fusce id ligula. Vivamus dapibus imperdiet ante. Aliquam id eros ut velit eleifend aliquet. Nulla commodo viverra orci. Sed auctor. Maecenas commodo. Mauris adipiscing lectus quis quam. Nulla a nisl in augue suscipit tincidunt. Nunc eros. Nam eget sapien eget lorem ultrices pulvinar. Vivamus dolor.
+
+Suspendisse auctor risus nec odio. Sed tortor sem, tempor eu, molestie ac, viverra et, arcu. Donec aliquet pede eget tellus. Pellentesque facilisis nibh in ante. Mauris et lectus. Nullam pede. Nam sed pede sollicitudin mi congue vestibulum. Suspendisse et diam sed odio venenatis dictum. 
+
+Integer eget nunc sit amet felis interdum sollicitudin. Mauris posuere, quam eu aliquam iaculis, ipsum magna pellentesque arcu, id rutrum augue erat luctus magna.
+
+Praesent ut lacus. Fusce interdum metus laoreet mi. Duis aliquet. Nunc malesuada leo id nulla. Praesent condimentum metus nec odio. Ut ut velit dapibus nibh interdum eleifend. Proin tempor sodales enim. Donec ultricies. Duis bibendum urna id ante. Donec ipsum lorem, venenatis et, tempus ut, vehicula et, mi. 
+
+<r:snippet name="comments" />',8);
+INSERT INTO "page_parts" VALUES(10,'body','Textile','h2. Since 1999...
+
+Duis vitae mi. Nunc tristique mauris malesuada odio. Integer pharetra, urna sit amet scelerisque sollicitudin, felis est rhoncus nibh, sed sollicitudin ipsum lacus quis metus. In hac habitasse platea dictumst. Sed quis sem eu libero tristique vehicula. In fermentum, pede ut congue placerat, arcu erat tempor augue, id ornare ipsum ante vitae tellus. Duis bibendum quam vitae lectus. Curabitur euismod nulla a risus. Suspendisse erat. Nulla facilisi. Integer odio felis, sollicitudin in, feugiat non, dictum sit amet, elit. ',9);
+INSERT INTO "page_parts" VALUES(11,'sidebar','','<div class="box" style="margin-top:50px">
+  <h3>Main office</h3>
+  222 Address Street<br />
+  Portland, OR 97008<br />
+  (503) 545-7777
+</div>
+',9);
+INSERT INTO "page_parts" VALUES(12,'sidebar','','<div class="box">
+<h3>News Archives</h3>
+<ul>
+<r:find url="/news/">
+<r:children:each order="desc">
+<r:header><li><a href="<r:date format="/news/%Y/%m/" />"><r:date format="%B %Y" /></a></li></r:header>
+</r:children:each>
+</r:find>
+</ul>
+</div>
+
+<r:snippet name="newsletter" />
+',4);
+INSERT INTO "page_parts" VALUES(13,'body','','<r:archive:children:each order="desc">
+<div class="entry">
+<h3><r:link /></h3>
+    <div class="posted">
+      Posted by <r:author /> on <r:date format="%B %d, %Y" /><em>|</em><img src="http://spurrd.com/assets/123/comment.png" /><a href="<r:url />#disqus_thread">Comments</a><em>|</em><r:link>Read full article</r:link>    
+    </div>
+  <r:content part="summary" />
+</div>
+</r:archive:children:each>
+
+<r:snippet name="comments_summary" />',10);
+INSERT INTO "page_parts" VALUES(14,'summary','Textile','At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.',5);
+INSERT INTO "page_parts" VALUES(16,'summary','Textile','Vivamus mollis porttitor odio. Vestibulum id mi. Suspendisse a tortor quis metus imperdiet eleifend. Pellentesque libero nulla, aliquam in, tristique vel, elementum et, odio. Fusce id ligula. Vivamus dapibus imperdiet ante. Aliquam id eros ut velit eleifend aliquet. Nulla commodo viverra orci. Sed auctor. Maecenas commodo. Mauris adipiscing lectus quis quam. Nulla a nisl in augue suscipit tincidunt. Nunc eros. Nam eget sapien eget lorem ultrices pulvinar. Vivamus dolor.',8);
+INSERT INTO "page_parts" VALUES(17,'body','','<h2>Site Map</h2>
+
+<div id="sitemap">
+ <ul>
+   <r:find url="/">
+     <r:snippet name="sitemap" />
+   </r:find>
+ </ul>
+</div>
+',11);
+INSERT INTO "page_parts" VALUES(18,'extended','','',11);
+INSERT INTO "page_parts" VALUES(19,'no-map','','',7);
+INSERT INTO "page_parts" VALUES(20,'no-map','','',11);
+INSERT INTO "page_parts" VALUES(32,'body','Fckeditor','<h3 style="text-align: center;">A Leader in Maritime Vibration Analysis Condition Monitoring<br />
+Web Based Vibration Monitoring</h3>
+<p style="text-align: center;"><b>Condition Analyzing Corporation <br />
+provides our clients with the following services:</b></p>
+<p>Condition Monitoring (CM) is a collection of non-invasive data gathering and analysis techniques that greatly reduce the likelihood of unplanned equipment failures while also reducing the need for expensive planned maintenance (PM) programs...</p>
+<p><a href="#">more</a><br />
+<br />
+Vibration Analysis is an economical and effective means of reducing maintenance procedures. Causes of machinery failure exhibit unique characteristics and, as internal material conditions deteriorate, the characteristics become more pronounced...</p>
+<p><a href="#">more</a></p>
+<p><br />
+Thermography (Infra Red) Survey serves as a non-destructive tool in the analysis and evaluation of electrical distribution equipment critical to the operation of the plant.&nbsp; Thermographic surveys are also useful in the detection of boiler lagging deficiencies, faulty bearings, steam trap effectiveness and motor insulation. Thermography is a widely used tool in all facets of industry to measure anywhere a fault can be predicted by a temperature differential</p>
+<p><a href="#">more</a></p>
+<p><br />
+Both Mode Shape and Operation Deflection Shape (ODS) display the vibration on a drawing or picture of a machine. Mode shape (based on the inherent resonance of a structure) can be determined if a hammer or bump test can produce those frequencies on the machine when not in use. ODS (based on the source frequencies and the resonance frequencies) can be determined from roving and reference measurements on the machine while in actual use</p>
+<p><a href="#">more</a></p>',16);
+INSERT INTO "page_parts" VALUES(33,'sidebar','Fckeditor','<h2>The Benefits of Our Services</h2>
+<p><b>Non-Opening of Machinery:</b><br />
+Our vibration services meet Class approved Condition Monitoring (CM) to secure credits for non-opening of machinery. The cost of the &quot;open and inspect&quot; requirement is virtually eliminated resulting in cost saving with an estimated ROI of 10 to 1.<br />
+<b><br />
+Class Approved PM Program:</b><br />
+CAC can provide an annual vibration analysis survey where required for an approved Planned Maintenance program.<br />
+<b><br />
+Annual Audit:</b><br />
+An annual audit gives the Port Engineer a virtual view of overall machine condition to aid in the planning of the annual maintenance budget</p>',16);
+INSERT INTO "page_parts" VALUES(34,'body','Fckeditor','<h3 style="text-align: center;"><span>A Leader in Maritime Vibration Analysis Condition Monitoring</span></h3>
+<p align="justify"><br />
+Interested in a career at CAC? We   are always on the  lookout for motivated top quality people to provide services   to our  first class clients.&nbsp;</p>
+<p align="justify">Although CAC is headquartered in Eatontown NJ our  decentralized business model means we employ qualified personnel that  work from their home location in  			most any coastal region of US and beyond.</p>
+<p>Current job openings May 2008. <br />
+<br />
+<a target="_blank" href="http://cacvibe.com/CAC%20-%20National%20Account%20Manager%20-%20Maritime.pdf"> 			National Account Manager</a><br />
+<br />
+<a target="_blank" href="http://cacvibe.com/field_surveyor_engineer_I.pdf">Field Surveyor/Engineer Level I</a><br />
+<br />
+<a target="_blank" href="http://cacvibe.com/CAC%20-%20Service%20Technician%20-%20Maritime.pdf"> 			Survey Technician</a></p>
+<p align="justify">If you have experience in Vibration  Analysis, Thermography or have Marine Experience or are Ex-Navy and are a  motivated individual possessing exceptional skills in computers,  mathematics, mechanics, technical writing and like to travel or have a  degree or post graduate degree in engineering or related discipline,  please contact us at:</p>
+<p align="justify">&nbsp;</p>
+<p><a href="mailto:resume@cacvibe.com">resume@cacvibe.com</a></p>',17);
+INSERT INTO "page_parts" VALUES(35,'extended','Markdown','',17);
+INSERT INTO "page_parts" VALUES(36,'body','Fckeditor','<h1 style="text-align: center;">Title Text</h1>
+<p>&quot;Sed ut perspiciatis unde omnis iste natus error sit voluptatem  accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab  illo inventore veritatis et quasi architecto beatae vitae dicta sunt  explicabo. Nemo enim ipsam voluptatem quia vol<i>uptas sit asper</i>natur aut  odit aut fugit, sed quia consequuntur magni dolores eos qui ratione  voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum  quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam  eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat  voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam  corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?  Quis autem vel eum <b>iure reprehenderit</b> qui in ea voluptate velit esse  quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo  voluptas nulla pariatur?&quot;</p>',18);
+INSERT INTO "page_parts" VALUES(38,'summary','Fckeditor','<p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>',18);
+INSERT INTO "page_parts" VALUES(39,'body','','<div class="grid_11" style="margin-left: 250px; float: left;">
+<center>
+<h3>Contact Information</h3>
+Telephone: +1 732-542-5588
+<br />
+Fax: 732-542-2967
+<br />
+23 White Street
+<br />
+Eatontown, New Jersey,  07724 USA
+</center>
+<br />
+<br />
+<r:mailer:form name=''contact''>
+  <fieldset>
+  <div class="grid_2" style="text-align:right;">
+    <label>Name</label><br>
+    <label>Email</label><br>
+    <label>Message</label><br>
+  </div>
+  <div class="grid_8">
+    <r:text name=''name''/><br>
+    <r:if_error on=''name''><p class="error">Name is required</p></r:if_error>
+    <r:text name=''email''/><br>
+    <r:if_error on=''email''><p class="error">Email is required</p></r:if_error>
+    <r:textarea name=''message''/><br>
+    <input type="submit" value="Send" class="submit-btn" style="margin-left: 175px !important;">
+  </div>
+  </fieldset>
+</r:mailer:form>
+</div>
+</center>',19);
+INSERT INTO "page_parts" VALUES(40,'mailer','','subject: "A New message from www.cacvibe.com"
+redirect_to: /contact/thanks
+from_field: email
+recipients:
+  - cacvibe@gmail.com',19);
+INSERT INTO "page_parts" VALUES(41,'body','Fckeditor','<h2 style="text-align: center;">&nbsp;</h2>
+<p>&nbsp;</p>
+<h2 style="text-align: center;">&nbsp;</h2>
+<h2 style="text-align: center;">&nbsp;</h2>
+<p><span style="font-size: large;">
+<h2 style="text-align: center;"><b>Thanks for contacting us.</b></h2>
+</span></p>
+<h2 style="text-align: center;"><span style="font-size: large;"><b>We will get back in touch with you shortly.</b></span></h2>
+<h2 style="text-align: center;">&nbsp;</h2>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>',20);
+INSERT INTO "page_parts" VALUES(42,'extended','Markdown','',20);
+INSERT INTO "page_parts" VALUES(43,'body','Fckeditor','<div align="left"><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><strong><font color="#000000"><img width="200" height="60" alt="" src="/uploads/Image/links.1.jpg" />Vibration School</font></strong><font color="#000000"> - Web Based              Vibration Analysis Distance Learning</font></font></div>
+<p><img width="148" height="37" alt="" src="/uploads/Image/link2.gif" />&nbsp;&nbsp;&nbsp; <span class="style5"><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><strong>Mobius</strong> is the home of the              world-renowned &quot;iLearn&quot; self-paced training, and the home of              Mobius Institute vibration training and certification.</font></span></p>
+<p><img width="78" height="48" alt="" src="/uploads/Image/link3.gif" /><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><span class="style5"><strong>&nbsp;&nbsp;&nbsp; ShipServ</strong> is the leading maritime e-marketplace, helping buyers              and sellers to easily find each other, connect cost effectively              and trade efficiently.</span></font>&nbsp;</p>
+<p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><span class="style5"><img width="148" height="53" alt="" src="/uploads/Image/link4.jpg" /> &nbsp; </span></font><span><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><strong>Connection Technology Center, Inc </strong></font></span></p>
+<p><img width="100" height="48" alt="" src="/uploads/Image/link6.jpg" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><span class="style5"><strong>FLIR              Infrared Camera Systems</strong> - FLIR              Systems, Inc. (NASDAQ: FLIR) is the global leader in infrared              cameras, training, software and related accessories. The unique              nature of thermal imaging or infrared technology is ideal for a              wide variety of applications across virtually all industries.</span></font></p>
+<p>&nbsp;</p>
+<div align="center" class="style11"><span style="font-size: large;"><b>Condition Analyzing Corporation Links </b></span></div>
+<div align="center" class="style11">&nbsp;</div>
+<div align="center" class="style11">&nbsp;</div>
+<p><a href="http://www.ship-technology.com/contractors/controls/cac/" target="_blank">http://www.ship-technology.com/contractors/controls/cac/</a></p>
+<p><a href="http://www.linkedin.com/companies/condition-analyzing-corporation" target="_blank">http://www.linkedin.com/companies/condition-analyzing-corporation</a></p>
+<p><a href="http://www.marketwire.com/press-release/Condition-Analyzing-Corporation-1028469.html" target="_blank">http://www.marketwire.com/press-release/Condition-Analyzing-Corporation-1028469.html</a></p>
+<p><a href="http://www.reuters.com/article/pressRelease/idUS128780+10-Jun-2009+MW20090610" target="_blank">http://www.reuters.com/article/pressRelease/idUS128780+10-Jun-2009+MW20090610</a></p>
+<p><a href="http://www.lead411.com/company_ConditionAnalyzingCorporationCAC_McNeil_54995.html" target="_blank">http://www.lead411.com/company_ConditionAnalyzingCorporationCAC_McNeil_54995.html</a></p>
+<p><a href="http://www.reliabilityweb.com/index.php/maintenance_news/condition_analyzing_corporation_opens_new_company_in_singapore/" target="_blank">http://www.reliabilityweb.com/index.php/maintenance_news/condition_analyzing_corporation_opens_new_company_in_singapore/</a></p>
+<p><a href="http://shipping.masterseek.com/id/30093277/Condition-Analyzing-Corp.htm" target="_blank">http://shipping.masterseek.com/id/30093277/Condition-Analyzing-Corp.htm</a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>',21);
+INSERT INTO "page_parts" VALUES(44,'extended','Markdown','',21);
+INSERT INTO "page_parts" VALUES(45,'body','Markdown','At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.',22);
+CREATE TABLE "extension_meta" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "schema_version" integer DEFAULT 0, "enabled" boolean DEFAULT 't');
+CREATE TABLE "sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "session_id" varchar(255), "data" text, "updated_at" datetime);
+CREATE TABLE "pages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "slug" varchar(100), "breadcrumb" varchar(160), "class_name" varchar(25), "status_id" integer DEFAULT 1 NOT NULL, "parent_id" integer, "layout_id" integer, "created_at" datetime, "updated_at" datetime, "published_at" datetime, "created_by_id" integer, "updated_by_id" integer, "virtual" boolean DEFAULT 'f' NOT NULL, "lock_version" integer DEFAULT 0, "description" varchar(255), "keywords" varchar(255), "sent_as_newsletter_email_at" datetime);
+INSERT INTO "pages" VALUES(1,'Conditional Analytics Corporation - Home Page','/','Home','',100,NULL,1,'2008-12-24 01:08:45','2011-03-02 18:21:46','2008-12-23 00:00:00',1,1,'f',79,'','',NULL);
+INSERT INTO "pages" VALUES(2,'File Not Found','file-not-found','File Not Found','FileNotFoundPage',100,1,NULL,'2008-12-24 01:08:45','2008-12-24 01:08:45','2008-12-23 18:08:45',1,NULL,'t',0,NULL,NULL,NULL);
+INSERT INTO "pages" VALUES(4,'Articles','news','News','ArchivePage',100,1,NULL,'2008-12-24 01:08:45','2011-03-07 15:00:47','2008-12-23 00:00:00',1,1,'f',19,'','',NULL);
+INSERT INTO "pages" VALUES(5,'New location opening tonight','new-location-opening-tonight','New location opening tonight','Page',100,4,NULL,'2008-12-24 01:08:45','2009-01-02 09:27:43','2006-06-09 00:00:00',1,NULL,'f',16,'','',NULL);
+INSERT INTO "pages" VALUES(7,'Styles','styles.css','Styles','',100,1,2,'2008-12-24 01:08:45','2011-03-02 18:31:40','2008-12-23 00:00:00',1,1,'f',6,'','',NULL);
+INSERT INTO "pages" VALUES(8,'The Finest grind','the-finest-grind','The Finest grind','Page',100,4,NULL,'2008-12-24 01:08:45','2009-01-02 09:27:11','2008-12-23 18:08:45',1,NULL,'f',11,'','',NULL);
+INSERT INTO "pages" VALUES(9,'About','about','About','Page',100,1,NULL,'2008-12-24 01:08:45','2009-01-02 09:22:02','2008-12-23 18:08:45',1,NULL,'f',9,'','',NULL);
+INSERT INTO "pages" VALUES(10,'%B %Y Archives','monthly-archives','Monthly Archives','ArchiveMonthIndexPage',100,4,NULL,'2008-12-24 01:08:45','2009-01-02 07:29:46','2008-12-23 18:08:45',1,NULL,'t',9,'','',NULL);
+INSERT INTO "pages" VALUES(11,'Site Map','sitemap','Site Map','Page',100,1,NULL,'2009-01-01 23:49:07','2009-01-02 01:31:41','2009-01-01 16:49:07',1,NULL,'f',11,'','',NULL);
+INSERT INTO "pages" VALUES(16,'Services','services','Services','',100,1,NULL,'2011-03-07 14:17:10','2011-03-07 14:17:53','2011-03-07 00:00:00',1,1,'f',1,'','',NULL);
+INSERT INTO "pages" VALUES(17,'Careers','careers','Careers','',100,1,4,'2011-03-07 14:48:02','2011-03-07 14:51:10','2011-03-07 00:00:00',1,1,'f',1,'','',NULL);
+INSERT INTO "pages" VALUES(18,'New CAC Website Going Up!','new-cac-website-going-up','New CAC Website Going Up!','',100,4,1,'2011-03-07 15:13:45','2011-03-07 15:27:27','2011-03-07 00:00:00',1,1,'f',4,'','',NULL);
+INSERT INTO "pages" VALUES(19,'Contact','contact','Contact','',100,1,4,'2011-03-07 15:42:35','2011-03-07 15:43:31','2011-03-07 00:00:00',1,1,'f',2,'','',NULL);
+INSERT INTO "pages" VALUES(20,'Thanks','thanks','Thanks','',100,19,1,'2011-03-07 15:57:46','2011-03-07 16:14:23','2011-03-07 00:00:00',1,1,'f',1,'','',NULL);
+INSERT INTO "pages" VALUES(21,'Links','links','Links','',100,1,4,'2011-03-07 17:41:17','2011-03-07 17:41:55','2011-03-07 00:00:00',1,1,'f',1,'','',NULL);
+INSERT INTO "pages" VALUES(22,'CAC Decision Point','cac-decision-point','CAC Decision Point','',100,1,NULL,'2011-03-07 17:49:15','2011-03-07 17:49:23','2011-03-07 00:00:00',1,1,'f',1,'','',NULL);
+CREATE TABLE "snippets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(100) DEFAULT '' NOT NULL, "filter_id" varchar(25), "content" text, "created_at" datetime, "updated_at" datetime, "created_by_id" integer, "updated_by_id" integer, "lock_version" integer DEFAULT 0);
+INSERT INTO "snippets" VALUES(1,'header','','<div id="greenline"></div>
+<div id="header">
+<ul style="padding-top: 5px;">
+<li>
+  <a class="cac-decision-link" href="/cac-decision-point">DECISION POINT F.A.Q.</a>
+</li>
+<li>
+  <a href="http://pmcm.net/login.php">CLIENT LOGIN</a>
+</li>
+</ul>
+</div>
+','2008-12-24 01:08:44','2011-03-07 17:49:57',1,1,20);
+INSERT INTO "snippets" VALUES(2,'footer','','Copyright 2011 Condition Analyzing Corporation. All rights reserved','2008-12-24 01:08:44','2011-03-06 16:11:12',1,1,6);
+INSERT INTO "snippets" VALUES(3,'navigation','','<a href="/" style="border: 0;"><img src="/images/cac-logo.jpg" style="margin-top: 17px; float: left; margin-right: 15px;" /></a>
+<ul>
+  <r:navigation urls="HOME: /">
+      <r:normal><li><a href="<r:url />"><r:title /></a></li></r:normal>
+      <r:here><li class="selected"><a href="<r:url />"><r:title /></a></li></r:here>
+      <r:selected><li><a href="<r:url />"><r:title /></a></li></r:selected>
+  </r:navigation>
+  <r:navigation urls="SERVICES: /services | CAREERS: /careers | NEWS: /news | CONTACT: /contact | LINKS: /links" >
+    <r:normal><li><a href="<r:url />"><r:title /></a></li></r:normal>
+    <r:here><li class="selected"><a href="<r:url />"><r:title /></a></li></r:here>
+    <r:selected><li class="selected"><a href="<r:url />"><r:title /></a></li></r:selected>
+  </r:navigation>
+</ul>    ','2008-12-30 21:38:09','2011-03-07 15:29:39',1,1,22);
+INSERT INTO "snippets" VALUES(4,'newsletter','','<h5>Sign up for our newsletter</h5>
+
+<r:newsletter:form>
+  <input class="email" value="Enter your email address..." type="text" onfocus="this.value=''''" name="subscriber[email]" style="font-size: 14px;" />
+<input class="subscribe" type="submit" value="Subscribe" class="submit-btn" />
+</r:newsletter:form>','2008-12-31 01:08:12','2011-03-07 15:02:51',1,1,21);
+INSERT INTO "snippets" VALUES(6,'articles','','<r:find url="/news">
+  <r:children:each order="desc" limit="3">
+  <div class="entry">
+    <h3><r:link /></h3>
+    <div class="posted">
+      Posted by <r:author /> on <r:date format="%B %d, %Y" /><em>|</em><img src="http://spurrd.com/assets/123/comment.png" /><a href="<r:url />#disqus_thread">Comments</a><em>|</em><r:link>Read full article</r:link>    
+    </div>
+    <r:content part="summary" />
+  </div>
+  </r:children:each>
+</r:find>
+
+<r:snippet name="comments_summary" />','2009-01-01 22:40:23','2009-01-02 07:19:28',1,NULL,19);
+INSERT INTO "snippets" VALUES(7,'sitemap','',' <r:children:each by="title" order="asc">
+   <r:unless_content part="no-map">
+     <li>
+       <r:link />
+       <r:if_children>
+         <ul class="second">
+           <r:snippet name="sitemap" />
+         </ul>
+       </r:if_children>
+     </li>
+   </r:unless_content>
+ </r:children:each>
+
+','2009-01-01 23:51:52','2009-01-02 00:45:01',1,NULL,14);
+INSERT INTO "snippets" VALUES(8,'comments','','<img src="http://spurrd.com/assets/126/comments.jpg" />
+
+<div id="disqus_thread"></div><r:comment><script type="text/javascript" src="http://disqus.com/forums/radiant/embed.js"></script><noscript><a href="http://radiant.disqus.com/?url=ref">View the discussion thread.</a></noscript></r:comment><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>','2009-01-02 02:17:21','2009-01-02 07:20:55',1,NULL,3);
+INSERT INTO "snippets" VALUES(9,'comments_summary','','﻿﻿﻿﻿<script type="text/javascript">
+//<![CDATA[
+(function() {
+		var links = document.getElementsByTagName(''a'');
+		var query = ''?'';
+		for(var i = 0; i < links.length; i++) {
+			if(links[i].href.indexOf(''#disqus_thread'') >= 0) {
+				query += ''url'' + i + ''='' + encodeURIComponent(links[i].href) + ''&'';
+			}
+		}
+		document.write(''<script type="text/javascript" src="http://disqus.com/forums/radiant/get_num_replies.js'' + query + ''"></'' + ''script>'');
+	})();
+//]]>
+</script>
+
+','2009-01-02 02:18:23','2009-01-02 02:59:44',1,NULL,4);
+INSERT INTO "snippets" VALUES(10,'posted','','<div class="posted">Posted by <r:author /> on <r:date format="%B %d, %Y" /><em>|</em><img src="http://spurrd.com/assets/123/comment.png" /><a href="<r:url />#disqus_thread">Comments</a></div>','2009-01-02 07:32:00','2009-01-02 07:32:00',1,NULL,0);
+INSERT INTO "snippets" VALUES(11,'slider','','<div class="slider">
+<div id="slideshow_container" class="easy_slides_container"></div>
+</div>','2011-03-07 18:00:23','2011-03-07 21:11:48',1,1,3);
+INSERT INTO "snippets" VALUES(12,'slider-settings','','<script>
+
+// Set up our options for the slideshow...
+var myOptions = {
+    noImages: 6, // Number of images
+    path: "/images/slideshow_images/",
+    captions: { // HTML can be included in the captions.
+        1: ''Caption 1'',
+        2: ''Caption 2'',
+        3: ''Caption 3'',
+        4: ''Caption 4'',
+        5: ''Caption 5'',
+        6: ''Caption 6''
+    },
+    links: { // Should the images link anywhere? if no links are required at all then this option can be omitted.
+        1:"",
+        2:"",
+        3:"",
+        4:"",
+        5:"",
+        6:""
+    },
+    linksOpen:''newWindow'', // How to open links? sameWindow or newWindow.
+    timerInterval: 5000, // 6500 = 6.5 seconds
+    randomise: false // Start with random image? true=yes/false=no
+};
+
+// Initiate the Easy Slides plugin, assigning it to your container DIV...
+$(''#slideshow_container'').easySlides(myOptions);
+
+</script>','2011-03-07 20:59:05','2011-03-07 21:36:04',1,1,3);
+CREATE TABLE "layouts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(100), "content" text, "created_at" datetime, "updated_at" datetime, "created_by_id" integer, "updated_by_id" integer, "content_type" varchar(40), "lock_version" integer DEFAULT 0);
+INSERT INTO "layouts" VALUES(1,'Normal','<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+  <head>
+    <title><r:title /></title>
+    <link href="/rss/" rel="alternate" title="RSS" type="application/rss+xml" />
+    <link rel="stylesheet" type="text/css" href="/styles.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/960.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/reset.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/text.css" />
+    <link REL="SHORTCUT ICON" HREF="/images/favicon.png">
+    <script src="/javascripts/jquery-1.4.1.min.js" type="text/javascript"></script>
+    <script src="/javascripts/jquery.easyslides.source.v1.1.js" type="text/javascript"></script>
+    <r:snippet name="slider-settings" />
+    <!--[if IE 6]>
+      <style type="text/css" media="screen">
+        @import url("/stylesheets/ie6.css");
+      </style>
+    <![endif]-->
+
+    <!--[if IE 7]>
+      <style type="text/css" media="screen">
+        @import url("/stylesheets/ie7.css");
+      </style>
+    <![endif]-->
+
+  </head>
+  <body>
+  <div class="container_24">
+    <div id="page">
+      <r:snippet name="header" />
+      <div class="clear"></div>
+      <div id="nav">
+        <r:snippet name="navigation" />
+      </div>
+      <div id="main">
+         <r:snippet name="slider" />
+      
+        <div class="clear" style="border-top: 4px solid #55a351; visibility: visible; width: 943px; height: 10px; margin: 10px 0;"></div>
+       <div id="sidebar-wrapper">
+          <div id="sidebar">
+            <r:content part="sidebar" inherit="true" />
+          </div>
+        </div>
+        <div id="content-wrapper">
+          <div id="content">
+            <r:content />
+            <r:if_content part="extended">
+            <div id="extended">
+              <r:content part="extended" />
+            </div>
+            </r:if_content>
+          </div>
+        </div>
+      </div>
+    <div style="clear:both"></div>
+    <div id="footer-wrapper">
+        <div id="footer">
+          <r:snippet name="footer" />
+        </div>
+    </div>
+    </div>
+    <div id="footer-bottom"></div>
+  </div>
+  </body>
+<r:snippet name="slider-settings" /> 
+</html>
+','2008-12-24 01:08:45','2011-03-07 21:44:19',1,1,'',60);
+INSERT INTO "layouts" VALUES(2,'Stylesheet','<r:content />
+','2008-12-24 01:08:45','2009-01-02 10:00:53',1,NULL,'text/css',1);
+INSERT INTO "layouts" VALUES(3,'XML Feed','<r:content />
+','2008-12-24 01:08:45','2008-12-24 01:08:45',1,NULL,'text/xml',0);
+INSERT INTO "layouts" VALUES(4,'No Sidebar','<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+  <head>
+    <title><r:title /></title>
+    <link href="/rss/" rel="alternate" title="RSS" type="application/rss+xml" />
+    <link rel="stylesheet" type="text/css" href="/styles.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/960.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/reset.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/text.css" />
+    <script src="/javascripts/jquery-1.4.1.min.js" type="text/javascript"></script>
+    <script src="/javascripts/jquery.easyslides.source.v1.1.js" type="text/javascript"></script>
+    <link REL="SHORTCUT ICON" HREF="/images/favicon.png">
+    <script type="text/javascript" src="http://www.jeroenwijering.com/embed/swfobject.js"></script>
+
+    <!--[if IE 6]>
+      <style type="text/css" media="screen">
+        @import url("/stylesheets/ie6.css");
+      </style>
+    <![endif]-->
+
+    <!--[if IE 7]>
+      <style type="text/css" media="screen">
+        @import url("/stylesheets/ie7.css");
+      </style>
+    <![endif]-->
+
+  </head>
+  <body>
+  <div class="container_24">
+    <div id="page">
+      <r:snippet name="header" />
+      <div class="clear"></div>
+      <div id="nav">
+        <r:snippet name="navigation" />
+      </div>
+      <div id="main">
+        <r:snippet name="slider" />
+      
+        <div class="clear" style="border-top: 4px solid #55a351; visibility: visible; width: 943px; height: 10px; margin: 10px 0;"></div>
+
+        <div id="content-wrapper" style="width: 910px !important;" >
+          <div id="content">
+            <r:content />
+            <r:if_content part="extended">
+            <div id="extended">
+              <r:content part="extended" />
+            </div>
+            </r:if_content>
+          </div>
+        </div>
+      </div>
+    <div style="clear:both"></div>
+    <div id="footer-wrapper">
+        <div id="footer">
+          <r:snippet name="footer" />
+        </div>
+    </div>
+    </div>
+    <div id="footer-bottom"></div>
+  </div>
+  </body>
+<r:snippet name="slider-settings" /> 
+</html>
+','2011-03-07 14:50:50','2011-03-07 21:44:36',1,1,'',13);
+CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(100), "email" varchar(255), "login" varchar(40) DEFAULT '' NOT NULL, "password" varchar(40), "created_at" datetime, "updated_at" datetime, "created_by_id" integer, "updated_by_id" integer, "admin" boolean DEFAULT 'f' NOT NULL, "designer" boolean DEFAULT 'f' NOT NULL, "notes" text, "lock_version" integer DEFAULT 0, "salt" varchar(255), "session_token" varchar(255), "locale" varchar(255));
+INSERT INTO "users" VALUES(1,'gotoAndBliss',NULL,'gotoAndBliss','e0659d7dd16d26dc11c3c0a80894f9a25d6c585b','2011-03-02 17:58:44','2011-03-02 17:58:44',NULL,NULL,'t','f',NULL,0,'90151231f568618869d065ec480f938885300a6b',NULL,NULL);
+CREATE TABLE "page_attachments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "asset_id" integer, "page_id" integer, "position" integer);
+CREATE TABLE "assets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "caption" varchar(255), "title" varchar(255), "asset_file_name" varchar(255), "asset_content_type" varchar(255), "asset_file_size" integer, "created_by_id" integer, "updated_by_id" integer, "created_at" datetime, "updated_at" datetime);
+CREATE TABLE "subscribers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255), "name" varchar(255), "subscriber_list_id" integer, "subscribed_at" datetime, "unsubscribed_at" datetime, "created_at" datetime, "updated_at" datetime);
+CREATE TABLE "newsletter_subscribers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "email" varchar(255), "newsletter_id" integer, "activation_code" varchar(255), "activated_at" datetime, "unsubscription_code" varchar(255), "unsubscribed_at" datetime, "created_at" datetime, "updated_at" datetime);
+CREATE TABLE "newsletter_emails" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "page_id" integer, "from" varchar(255), "to" varchar(255), "last_send_attempt" integer DEFAULT 0, "mail" text, "created_on" datetime);
+CREATE TABLE "newsletter_logs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "message_type" varchar(255), "message" text, "created_at" datetime);
+CREATE TABLE "newsletter_traces" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "newsletter_email_page_id" integer, "newsletter_subscriber_id" integer, "trace_type" varchar(255), "trace_data" text, "created_on" datetime);
+CREATE TABLE "newsletters" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255), "created_at" datetime, "updated_at" datetime);
+INSERT INTO "newsletters" VALUES(1,NULL,'2011-03-07 00:41:43','2011-03-07 00:41:43');
+INSERT INTO "newsletters" VALUES(2,NULL,'2011-03-07 00:44:26','2011-03-07 00:44:26');
+INSERT INTO "newsletters" VALUES(3,NULL,'2011-03-07 00:47:12','2011-03-07 00:47:12');
+INSERT INTO "newsletters" VALUES(4,NULL,'2011-03-07 00:48:30','2011-03-07 00:48:30');
+INSERT INTO "newsletters" VALUES(5,NULL,'2011-03-07 00:48:35','2011-03-07 00:48:35');
+INSERT INTO "newsletters" VALUES(6,NULL,'2011-03-07 00:48:57','2011-03-07 00:48:57');
+INSERT INTO "newsletters" VALUES(7,NULL,'2011-03-07 00:49:05','2011-03-07 00:49:05');
+INSERT INTO "newsletters" VALUES(8,NULL,'2011-03-07 00:51:16','2011-03-07 00:51:16');
+INSERT INTO "newsletters" VALUES(9,'daniel.levine4@gmail.com','2011-03-07 00:51:27','2011-03-07 00:51:27');
+INSERT INTO "newsletters" VALUES(10,'daniel.levine4@gmail.com','2011-03-07 00:54:51','2011-03-07 00:54:51');
+INSERT INTO "newsletters" VALUES(11,'daniel.asdfad@casdf.com','2011-03-07 00:55:41','2011-03-07 00:55:41');
+INSERT INTO "newsletters" VALUES(12,'dsfasd@asdfads.com','2011-03-07 00:59:34','2011-03-07 00:59:34');
+CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version");
+CREATE UNIQUE INDEX "key" ON "config" ("key");
+CREATE INDEX "index_sessions_on_session_id" ON "sessions" ("session_id");
+CREATE INDEX "index_sessions_on_updated_at" ON "sessions" ("updated_at");
+CREATE UNIQUE INDEX "name" ON "snippets" ("name");
+CREATE INDEX "pages_class_name" ON "pages" ("class_name");
+CREATE INDEX "pages_parent_id" ON "pages" ("parent_id");
+CREATE INDEX "pages_child_slug" ON "pages" ("slug", "parent_id");
+CREATE INDEX "pages_published" ON "pages" ("virtual", "status_id");
+CREATE INDEX "parts_by_page" ON "page_parts" ("page_id", "name");
+CREATE UNIQUE INDEX "login" ON "users" ("login");
+COMMIT;
