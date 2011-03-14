@@ -96,5 +96,5 @@ ActionMailer::Base.smtp_settings = {
 }
 Radiant::Config['mailer.post_to_page?'] = true
 Radiant::Config['defaults.page.filter'] = 'Fckeditor'
-Radiant::Config['defaults.page.parts'] = 'summary'
+Radiant::Config['defaults.page.parts'] = 'body, summary'
 Radiant::Config['page.edit.published_date?'] = true
