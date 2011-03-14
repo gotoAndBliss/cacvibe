@@ -95,3 +95,4 @@ ActionMailer::Base.smtp_settings = {
   :password => "pavement44"
 }
 Radiant::Config['mailer.post_to_page?'] = true
+Radiant::Config['defaults.page.filter'] = 'Fckeditor'
