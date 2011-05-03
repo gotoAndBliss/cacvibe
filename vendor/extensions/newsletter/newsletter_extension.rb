@@ -18,8 +18,8 @@ class NewsletterExtension < Radiant::Extension
   def activate
     Page.send :include, NewsletterTags
     
-    # tab 'Content' do
-    #   add_item "Newsletter", "/admin/newsletter", :after => "Pages"
-    # end
+    tab 'Content' do
+      add_item "Newsletter", "/admin/newsletters", :after => "Pages"
+    end
   end
 end
