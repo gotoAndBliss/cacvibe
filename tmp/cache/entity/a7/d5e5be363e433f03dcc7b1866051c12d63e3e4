@@ -2,7 +2,7 @@
   "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
   <head>
-    <title>Services</title>
+    <title>Thanks</title>
     <link href="/rss/" rel="alternate" title="RSS" type="application/rss+xml" />
     <link rel="stylesheet" type="text/css" href="/styles.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/960.css" />
@@ -75,7 +75,7 @@ $('#slideshow_container').easySlides(myOptions);
         <a href="/" style="border: 0;"><img src="/images/cac-logo.jpg" style="margin-top: 17px; float: left; margin-right: 15px;" /></a>
 <ul>
   <li><a href="/">HOME</a></li>
-  <li class="selected"><a href="/services">SERVICES</a></li> <li><a href="/careers">CAREERS</a></li> <li><a href="/news">NEWS</a></li> <li><a href="/contact">CONTACT</a></li> <li><a href="/links">LINKS</a></li>
+  <li><a href="/services">SERVICES</a></li> <li><a href="/careers">CAREERS</a></li> <li><a href="/news">NEWS</a></li> <li class="selected"><a href="/contact">CONTACT</a></li> <li><a href="/links">LINKS</a></li>
 </ul>    
       </div>
       <div id="main">
@@ -86,34 +86,53 @@ $('#slideshow_container').easySlides(myOptions);
         <div class="clear" style="border-top: 4px solid #55a351; visibility: visible; width: 943px; height: 10px; margin: 10px 0;"></div>
        <div id="sidebar-wrapper">
           <div id="sidebar">
-            <h2>The Benefits of Our Services</h2>
-<p><b>Non-Opening of Machinery:</b><br />
-Our vibration services meet Class approved Condition Monitoring (CM) to secure credits for non-opening of machinery. The cost of the &quot;open and inspect&quot; requirement is virtually eliminated resulting in cost saving with an estimated ROI of 10 to 1.<br />
-<b><br />
-Class Approved PM Program:</b><br />
-CAC can provide an annual vibration analysis survey where required for an approved Planned Maintenance program.<br />
-<b><br />
-Annual Audit:</b><br />
-An annual audit gives the Port Engineer a virtual view of overall machine condition to aid in the planning of the annual maintenance budget</p>
+            <p><span style="font-family: Tahoma;"><span style="font-size: medium;">Corporate Headquarters<br />
+23 White St<br />
+Eatontown, NJ 07724</span><br />
+<span style="font-size: medium;"><b>+1 732-542-5588<br />
+</b></span></span><span style="font-family: Verdana;"><span style="font-size: medium;"><b><a href="mailto:CAC@CACVIBE.COM"><span style="font-family: Tahoma;"><small><span style="color: rgb(153, 51, 0);">CAC@CACVIBE.COM</span></small></span></a></b></span></span></p>
+<hr />
+<p><h5>Sign up for our newsletter</h5>
+
+<form action="/newsletters/" method="post" id="newsletter"><input name="authenticity_token" type="hidden" value="txWEo0mdRthOzdr/Tlof/0xtTYF68/zfR0Co7N3IweI=" />
+  <input class="email" value="Enter your email address..." type="text" onfocus="this.value=''" name="subscriber[email]" style="font-size: 14px;" />
+<input class="subscribe" type="submit" value="Subscribe" class="submit-btn" />
+</form></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-family: Tahoma;"><span style="font-size: medium;"><a href="http://localhost:3000/map-locations/singapore" onclick="window.open(this.href,'Singapore','resizable=no,location=no,menubar=no,scrollbars=no,status=no,toolbar=no,fullscreen=no,dependent=no,width=500,height=400,status'); return false">Singapore</a><br />
+<a onclick="window.open(this.href,'houston','resizable=no,location=no,menubar=no,scrollbars=no,status=no,toolbar=no,fullscreen=no,dependent=no,width=500,height=400,status'); return false" href="http://localhost:3000/map-locations/new-orleans">New Orleans</a></span></span></p>
+<p><span style="font-family: Tahoma;"><span style="font-size: medium;"><a onclick="window.open(this.href,'houston','resizable=no,location=no,menubar=no,scrollbars=no,status=no,toolbar=no,fullscreen=no,dependent=no,width=500,height=400,status'); return false" href="http://localhost:3000/map-locations/houston">Houston</a><br />
+<a onclick="window.open(this.href,'','resizable=no,location=no,menubar=no,scrollbars=no,status=no,toolbar=no,fullscreen=no,dependent=no,width=500,height=400,status'); return false" href="http://localhost:3000/map-locations/miami">Miami</a><br />
+<a onclick="window.open(this.href,'','resizable=no,location=no,menubar=no,scrollbars=no,status=no,toolbar=no,fullscreen=no,dependent=no,width=500,height=400,status'); return false" href="http://localhost:3000/map-locations/long-beach">Long Beach</a><br />
+<a onclick="window.open(this.href,'seattle','resizable=no,location=no,menubar=no,scrollbars=no,status=no,toolbar=no,fullscreen=no,dependent=no,width=500,height=400,status'); return false" href="http://localhost:3000/map-locations/seattle">Seattle</a><br />
+<a onclick="window.open(this.href,'NewYork','resizable=no,location=no,menubar=no,scrollbars=no,status=no,toolbar=no,fullscreen=no,dependent=no,width=500,height=400,status'); return false" href="http://localhost:3000/map-locations/new-york">New York</a><br />
+<a onclick="window.open(this.href,'','resizable=no,location=no,menubar=no,scrollbars=no,status=no,toolbar=no,fullscreen=no,dependent=no,width=500,height=400,status'); return false" href="http://localhost:3000/map-locations/puerto-rico">Puerto Rico</a></span></span></p>
           </div>
         </div>
         <div id="content-wrapper">
           <div id="content">
-            <h3 style="text-align: center;">A Leader in Maritime Vibration Analysis Condition Monitoring<br />
-Web Based Vibration Monitoring</h3>
-<p style="text-align: center;"><b>Condition Analyzing Corporation <br />
-provides our clients with the following services:</b></p>
-<p>Condition Monitoring (CM) is a collection of non-invasive data gathering and analysis techniques that greatly reduce the likelihood of unplanned equipment failures while also reducing the need for expensive planned maintenance (PM) programs...</p>
-<p><a href="#">more</a><br />
-<br />
-Vibration Analysis is an economical and effective means of reducing maintenance procedures. Causes of machinery failure exhibit unique characteristics and, as internal material conditions deteriorate, the characteristics become more pronounced...</p>
-<p><a href="#">more</a></p>
-<p><br />
-Thermography (Infra Red) Survey serves as a non-destructive tool in the analysis and evaluation of electrical distribution equipment critical to the operation of the plant.&nbsp; Thermographic surveys are also useful in the detection of boiler lagging deficiencies, faulty bearings, steam trap effectiveness and motor insulation. Thermography is a widely used tool in all facets of industry to measure anywhere a fault can be predicted by a temperature differential</p>
-<p><a href="#">more</a></p>
-<p><br />
-Both Mode Shape and Operation Deflection Shape (ODS) display the vibration on a drawing or picture of a machine. Mode shape (based on the inherent resonance of a structure) can be determined if a hammer or bump test can produce those frequencies on the machine when not in use. ODS (based on the source frequencies and the resonance frequencies) can be determined from roving and reference measurements on the machine while in actual use</p>
-<p><a href="#">more</a></p>
+            <h2 style="text-align: center;">&nbsp;</h2>
+<p>&nbsp;</p>
+<h2 style="text-align: center;">&nbsp;</h2>
+<h2 style="text-align: center;">&nbsp;</h2>
+<p><span style="font-size: large;">
+<h2 style="text-align: center;"><b>Thanks for contacting us.</b></h2>
+</span></p>
+<h2 style="text-align: center;"><span style="font-size: large;"><b>We will get back in touch with you shortly.</b></span></h2>
+<h2 style="text-align: center;">&nbsp;</h2>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+            
+            <div id="extended">
+              
+
+            </div>
             
           </div>
         </div>

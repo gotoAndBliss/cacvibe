@@ -6,6 +6,8 @@ gem "radiant"
 gem "aws-s3"
 gem "ruby-debug"
 gem "fastercsv"
+
+
 # bundler requires these gems in all environments
 # gem "nokogiri", "1.4.2"
 # gem "geokit"

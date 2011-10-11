@@ -9,6 +9,7 @@ require File.join(File.dirname(__FILE__), 'boot')
 
 require 'radius'
 
+
 Radiant::Initializer.run do |config|
   # Skip frameworks you're not going to use (only works if using vendor/rails).
   # To use Rails without a database, you must remove the Active Record framework
@@ -98,3 +99,5 @@ Radiant::Config['mailer.post_to_page?'] = true
 Radiant::Config['defaults.page.filter'] = 'Fckeditor'
 Radiant::Config['defaults.page.parts'] = 'body, summary'
 Radiant::Config['page.edit.published_date?'] = true
+Radiant::Config['recaptcha.public_key'] = '6LcL4sgSAAAAAKW37Rq2hfCu4mvEPVCtWjMYCjiC'
+Radiant::Config['recaptcha.private_key'] = '6LcL4sgSAAAAAHWEhxs1gfcuWY61Ivg17hBA1DFX'
